@@ -1,9 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Header = () => {
-    const links = <>
 
+    const {user, logOut} = useContext(AuthContext);
+    console.log(user);
+    const handleSignOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user);
+                alert("Logout Successfully");
+            })
+            .catch()
+    }
+
+    const links = <>
         <li className="mr-3"><Link to="/">Home</Link></li>
         <li className="mr-3"><Link to="/UpdateProfile">Update Profile</Link></li>
         <li><button><Link to="/login">LOGIN</Link></button></li>
@@ -31,7 +44,7 @@ const Header = () => {
             </div>
 
 
-            {/* {
+            {
                  user ?
                     <div className="flex navbar-end">
                         <div>
@@ -48,7 +61,7 @@ const Header = () => {
                         <Link to="/login"><button className="btn mr-16 bg-green-600 text-xl font-medium ">LOGIN</button></Link>
                     </div>
 
-            } */}
+            }
 
 
         </div>
