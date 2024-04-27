@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Header = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const {user, logOut,signIn} = useContext(AuthContext);
     console.log(user);
     const handleSignOut = () => {
         logOut()
@@ -18,10 +18,11 @@ const Header = () => {
 
     const links = <>
         <li className="mr-3"><Link to="/">Home</Link></li>
-        <li className="mr-3"><Link to="/UpdateProfile">Update Profile</Link></li>
+        <li className="mr-3"><Link to="/AllTouristsSpot">All Tourists Spot</Link></li>
         <li><button><Link to="/login">LOGIN</Link></button></li>
+        <li><button><Link to="/MyList">My List</Link></button></li>
         <li><button><Link to="/Register">Register</Link></button></li>
-        <li><button><Link to="/Facilities">Extra Facilities</Link></button></li>
+        <li><button><Link to="/AddTouristsSpot">Add Tourists Spot</Link></button></li>
 
     </>
     return (
@@ -35,7 +36,7 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-3xl font-bold text-amber-600">Dream Resorts</a>
+                <a className="btn btn-ghost text-3xl font-bold text-amber-600">Dream Place</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl font-medium text-yellow-600">
