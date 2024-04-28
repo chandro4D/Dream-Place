@@ -14,6 +14,7 @@ import Register from './Component/Register/Register';
 import Login from './Component/Login/Login';
 import AuthProvider from './Provider/AuthProvider';
 import AddTouristsSport from './Component/AddTouristsSport/AddTouristsSport';
+import AllTouristsSpot from './Component/AllTouristsSpot/AllTouristsSpot';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,12 @@ const router = createBrowserRouter([
       {
         path: "/AddTouristsSpot",
         element: <AddTouristsSport></AddTouristsSport>
+      },
+      {
+        path: "/AllTouristsSpot",
+        element: <AllTouristsSpot></AllTouristsSpot>,
+        loader: () => fetch('http://localhost:7000/addTouristsSport')
+      
       }
     ]
   },
