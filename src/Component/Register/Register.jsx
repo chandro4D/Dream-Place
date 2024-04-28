@@ -10,7 +10,7 @@ const Register = () => {
     const navigate = useNavigate();
 
 
-    const { createUser,setUser } = useContext(AuthContext);
+    const { createUser,setUser,updateUserProfile } = useContext(AuthContext);
 
 
     const handleRegister = e => {
@@ -46,7 +46,7 @@ const Register = () => {
                 setUser(result.user)
                 setSuccess("Account Created successfully");
                 alert("Account Created successfully")
-                // updateUserProfile(name,PhotoURL)
+                updateUserProfile(name,PhotoURL)
                 // .then()
                 navigate("/");
             })
