@@ -15,6 +15,9 @@ import Login from './Component/Login/Login';
 import AuthProvider from './Provider/AuthProvider';
 import AddTouristsSport from './Component/AddTouristsSport/AddTouristsSport';
 import AllTouristsSpot from './Component/AllTouristsSpot/AllTouristsSpot';
+import Details from './Component/Details/Details';
+import MyList from './Component/MyList/MyList';
+import Update from './Component/Update/Update';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,20 @@ const router = createBrowserRouter([
         element: <AllTouristsSpot></AllTouristsSpot>,
         loader: () => fetch('http://localhost:7000/addTouristsSport')
       
+      },
+      {
+        path:'/details/:_id',
+        element:<Details></Details>
+      },
+      {
+        path: "/myList",
+        element: <MyList></MyList>,
+        loader: () => fetch('http://localhost:7000/addTouristsSport')
+      
+      },
+      {
+        path: "/update",
+        element: <Update></Update>
       }
     ]
   },

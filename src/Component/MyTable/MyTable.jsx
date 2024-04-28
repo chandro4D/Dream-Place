@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-const TouristCard = ({ Sport }) => {
+
+const MyTable = ({ Sport }) => {
     const { ImageURL, TouristsSportName, AverageCost, Seasonality, TravelTime, TotalVisitors, _id } = Sport;
     return (
         <div className="card  bg-base-100 shadow-xl mb-14 lg:mr-[40px]  sm:mr-[0px]">
@@ -29,14 +30,19 @@ const TouristCard = ({ Sport }) => {
                     </div>
                 </div>
 
-                
 
-                <div className="card-actions justify-center">
-                    <Link  to={`/details/${Sport._id}`} ><button className="btn btn-primary">View Details</button></Link>
+
+                <div className="card-actions justify-center flex">
+                    <div className="mr-10">
+                        <Link to={'/update'} ><button className="btn btn-primary">Update</button></Link>
+                    </div>
+                    <div>
+                        <Link ><button className="btn btn-primary">Delete</button></Link>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default TouristCard;
+export default MyTable;
