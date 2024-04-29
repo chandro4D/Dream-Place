@@ -1,7 +1,8 @@
 
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const AddTouristsSport = () => {
-
+const navigate = useNavigate();
     const handleAddTouristsSport = event => {
         event.preventDefault();
         const form = event.target;
@@ -36,9 +37,12 @@ const AddTouristsSport = () => {
                         title: 'success!',
                         text: 'Add New Tourists Sport Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'OK'
+                        
                     })
+                    navigate('/')
                 }
+                
             })
     }
 

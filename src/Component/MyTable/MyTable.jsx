@@ -67,7 +67,9 @@ const MyTable = ({ Sport }) => {
 
                 <div className="card-actions justify-center flex">
                     <div className="mr-10">
-                        <Link to={'/update'} ><button className="btn btn-primary">Update</button></Link>
+                        <Link to={`/update/${_id}`} >
+                            <button className="btn btn-primary">Update</button>
+                        </Link>
                     </div>
                     <div>
                         <button

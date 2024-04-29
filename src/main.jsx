@@ -58,8 +58,9 @@ const router = createBrowserRouter([
       
       },
       {
-        path: "/update",
-        element: <Update></Update>
+        path: 'update/:id',
+        element: <Update></Update>,
+        loader:({params}) => fetch(`http://localhost:7000/addTouristsSport/${params.id}`)
       }
     ]
   },
