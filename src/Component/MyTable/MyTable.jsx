@@ -19,7 +19,7 @@ const MyTable = ({ Sport }) => {
             if (result.isConfirmed) {
 
                 fetch(`http://localhost:7000/addTouristsSport/${_id}`,{
-                    mathod: 'DELETE'
+                    method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -70,9 +70,9 @@ const MyTable = ({ Sport }) => {
                         <Link to={'/update'} ><button className="btn btn-primary">Update</button></Link>
                     </div>
                     <div>
-                        <Link ><button
+                        <button
                             onClick={() => handleDelete(_id)}
-                            className="btn btn-primary">Delete</button></Link>
+                            className="btn btn-primary">Delete</button>
                     </div>
                 </div>
             </div>
