@@ -18,7 +18,7 @@ const MyTable = ({ Sport }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:7000/addTouristsSport/${_id}`,{
+                fetch(`http://localhost:7000/addTouristsSport/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -36,6 +36,9 @@ const MyTable = ({ Sport }) => {
         });
 
     }
+
+
+
     return (
         <div className="card  bg-base-100 shadow-xl mb-14 lg:mr-[40px]  sm:mr-[0px]">
 
