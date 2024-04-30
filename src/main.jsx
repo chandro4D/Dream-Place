@@ -20,6 +20,7 @@ import MyList from './Component/MyList/MyList';
 import Update from './Component/Update/Update';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,9 +31,9 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch('http://localhost:7000/sportSection'),
-        
+
       },
-      
+
       {
         path: "/Register",
         element: <Register></Register>
@@ -49,22 +50,22 @@ const router = createBrowserRouter([
         path: "/AllTouristsSpot",
         element: <AllTouristsSpot></AllTouristsSpot>,
         loader: () => fetch('http://localhost:7000/addTouristsSport')
-      
+
       },
       {
-        path:'/details/:_id',
-        element:<Details></Details>
+        path: '/details/:_id',
+        element: <Details></Details>
       },
       {
         path: "/myList",
         element: <MyList></MyList>,
         loader: () => fetch('http://localhost:7000/addTouristsSport')
-      
+
       },
       {
         path: 'update/:id',
         element: <Update></Update>,
-        loader:({params}) => fetch(`http://localhost:7000/addTouristsSport/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:7000/addTouristsSport/${params.id}`)
       }
     ]
   },
