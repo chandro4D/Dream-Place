@@ -1,11 +1,9 @@
 
-const Details = () => {
 
-    
-   
+const Details = () => {
     return (
         <div>
-            <h3>Details section</h3>
+            <h3>view details</h3>
         </div>
     );
 };

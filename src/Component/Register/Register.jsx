@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -24,17 +25,30 @@ const Register = () => {
 
         if (password.length < 6) {
             setRegisterError('Password should be at least 6 characters');
-            alert("Password should be at least 6 characters")
+            Swal.fire({
+                icon: "error",
+                text: "Password should be at least 6 characters!",
+                
+              });
             return;
         }
         else if (!/[A-Z]/.test(password)) {
             setRegisterError('Your password should have at least one upper case letter');
-            alert("Your password should have at least one upper case letter")
+            
+            Swal.fire({
+                icon: "error",
+                text: "Your password should have at least one upper case letter!",
+                
+              });
             return;
         }
         else if (!/[a-z]/.test(password)) {
             setRegisterError('Your password should have at least one lower case letter');
-            alert("Your password should have at least one lower case letter")
+            Swal.fire({
+                icon: "error",
+                text: "Your password should have at least one lower case letter!",
+                
+              });
             return;
         }
         setRegisterError('');
@@ -46,7 +60,12 @@ const Register = () => {
                 console.log(result.user);
                 setUser(result.user)
                 setSuccess("Account Created successfully");
-                alert("Account Created successfully")
+                Swal.fire({
+                    icon: "success",
+                    text: "Account Created successfully!",
+                    
+                  });
+                
                 updateUserProfile(name, PhotoURL)
                 // .then()
                 navigate("/");

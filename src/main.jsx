@@ -15,9 +15,11 @@ import Login from './Component/Login/Login';
 import AuthProvider from './Provider/AuthProvider';
 import AddTouristsSport from './Component/AddTouristsSport/AddTouristsSport';
 import AllTouristsSpot from './Component/AllTouristsSpot/AllTouristsSpot';
-import Details from './Component/Details/Details';
 import MyList from './Component/MyList/MyList';
 import Update from './Component/Update/Update';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import Details from './Component/Details/Details';
+
 
 
 
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:7000/sportSection'),
+        loader: () => fetch('https://assignment-ten-server-ecru-ten.vercel.app/sportSection'),
 
       },
 
@@ -44,28 +46,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/AddTouristsSpot",
-        element: <AddTouristsSport></AddTouristsSport>
+        element: <PrivateRoute><AddTouristsSport></AddTouristsSport></PrivateRoute>
       },
       {
         path: "/AllTouristsSpot",
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch('http://localhost:7000/addTouristsSport')
+        loader: () => fetch('https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport')
 
       },
-      {
-        path: '/details/:_id',
-        element: <Details></Details>
-      },
+      
       {
         path: "/myList",
-        element: <MyList></MyList>,
-        loader: () => fetch('http://localhost:7000/addTouristsSport')
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+        loader: () => fetch('https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport')
 
       },
       {
         path: 'update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:7000/addTouristsSport/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport/${params.id}`)
+      },
+      {
+        path: "/details",
+        element: <Details></Details>
       }
     ]
   },

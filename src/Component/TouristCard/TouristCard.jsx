@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const TouristCard = ({ Sport }) => {
-    const { ImageURL, TouristsSportName, AverageCost, Seasonality, TravelTime, TotalVisitors, _id } = Sport;
+    const { ImageURL, TouristsSportName, AverageCost, Seasonality, TravelTime, TotalVisitors, } = Sport;
     return (
         <div className="card  bg-base-100 shadow-xl mb-14 lg:mr-[40px]  sm:mr-[0px]">
 
@@ -32,7 +32,7 @@ const TouristCard = ({ Sport }) => {
                 
 
                 <div className="card-actions justify-center">
-                    <Link  to={`/details/${Sport._id}`} ><button className="btn btn-primary">View Details</button></Link>
+                    <Link><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>

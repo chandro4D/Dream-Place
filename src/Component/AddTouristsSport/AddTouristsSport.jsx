@@ -22,7 +22,7 @@ const navigate = useNavigate();
         const newSport = { ImageURL, TouristsSportName, CountryName, Location, ShortDescription, AverageCost, Seasonality, TravelTime, UserEmail, UserName, TotalVisitors }
         console.log(newSport);
         // send data to the server
-        fetch('http://localhost:7000/addTouristsSport', {
+        fetch('https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

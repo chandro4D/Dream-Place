@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
     const Sport = useLoaderData()
     const { ImageURL, TouristsSportName, CountryName, Location, ShortDescription, AverageCost, Seasonality, TravelTime, UserEmail, UserName, TotalVisitors,_id } = Sport;
 
-
+    const navigate = useNavigate()
     const handleUpdate = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,7 +25,7 @@ const Update = () => {
         const updateSport = { ImageURL, TouristsSportName, CountryName, Location, ShortDescription, AverageCost, Seasonality, TravelTime, UserEmail, UserName, TotalVisitors }
         console.log(updateSport);
         // send data to the server
-        fetch(`http://localhost:7000/addTouristsSport/${_id}`, {
+        fetch(`https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -41,9 +41,13 @@ const Update = () => {
                         text: ' Tourists Sport Update Successfully',
                         icon: 'success',
                         confirmButtonText: 'OK'
+                        
                     })
+                    navigate('/')
                 }
+                
             })
+            
     }
 
 

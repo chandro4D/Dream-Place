@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -20,12 +21,22 @@ const Login = () => {
         signIn(email,password)
         .then(result => {
             console.log(result.user);
-            alert("LogIn successfully")
+            Swal.fire({
+                icon: "success",
+                text: "LogIn successfully!",
+                
+              });
+            
             navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             console.log(error);
-            alert("Please Provide Correct Email And Password")
+            Swal.fire({
+                icon: "error",
+                text: "Please Provide Correct Email And Password!",
+                
+              });
+            
         })
     } 
 
@@ -35,7 +46,11 @@ const Login = () => {
         githubLogin()
         .then(result =>{
             console.log(result.user)
-            alert("Log in Successfully")
+            Swal.fire({
+                icon: "success",
+                text: "LogIn successfully!",
+                
+              });
             navigate(location?.state ? location.state : '/');
         })
         .catch(error =>{
@@ -51,7 +66,11 @@ const Login = () => {
         googleLogin()
         .then(result =>{
             console.log(result.user)
-            alert("Log in Successfully")
+            Swal.fire({
+                icon: "success",
+                text: "LogIn successfully!",
+                
+              });
             navigate(location?.state ? location.state : '/');
         })
         .catch(error =>{

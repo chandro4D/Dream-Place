@@ -17,7 +17,7 @@ const Header = () => {
     }
 
     const links = <>
-        <li className="mr-3"><Link to="/">Home</Link></li>
+        <li className="mr-3"><Link to="/"> Home</Link></li>
         <li className="mr-3"><Link to="/AllTouristsSpot">All Tourists Spot</Link></li>
         <li><button><Link to="/login">LOGIN</Link></button></li>
         <li><button><Link to="/MyList">My List</Link></button></li>

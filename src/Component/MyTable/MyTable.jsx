@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyTable = ({ Sport }) => {
     const { ImageURL, TouristsSportName, AverageCost, Seasonality, TravelTime, TotalVisitors, _id } = Sport;
-
+    const navigate = useNavigate()
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
@@ -18,7 +18,7 @@ const MyTable = ({ Sport }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:7000/addTouristsSport/${_id}`, {
+                fetch(`https://assignment-ten-server-ecru-ten.vercel.app/addTouristsSport/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -30,6 +30,7 @@ const MyTable = ({ Sport }) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                               });
+                              navigate('/')
                         }
                     })
             }

@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import MyTable from "../MyTable/MyTable";
 
+
 const MyList = () => {
     const Sports = useLoaderData()
     return (
@@ -11,6 +12,7 @@ const MyList = () => {
                     Sport={Sport}
                 ></MyTable>)
             }
+            
         </div>
     );
 };
