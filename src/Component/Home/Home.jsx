@@ -1,10 +1,14 @@
+
 import SwiperSlider from "../SwiperSlider/SwiperSlider";
+import TouristSection from "../TouristSection/TouristSection";
 
 const Home = () => {
     return (
-        <div>
-            <h3 className="text-center text-3xl font-semibold text-amber-300">This is Home</h3>
+        <div className="mt-10">
+           
             <SwiperSlider></SwiperSlider>
+            <TouristSection></TouristSection>
+            
         </div>
     );
 };

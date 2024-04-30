@@ -19,6 +19,7 @@ import Details from './Component/Details/Details';
 import MyList from './Component/MyList/MyList';
 import Update from './Component/Update/Update';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,8 +28,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:7000/sportSection'),
+        
       },
+      
       {
         path: "/Register",
         element: <Register></Register>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+
 const Register = () => {
     const [registerError, setRegisterError] = useState("");
     const [success, setSuccess] = useState('');
@@ -10,7 +11,7 @@ const Register = () => {
     const navigate = useNavigate();
 
 
-    const { createUser,setUser,updateUserProfile } = useContext(AuthContext);
+    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
 
 
     const handleRegister = e => {
@@ -41,12 +42,12 @@ const Register = () => {
 
         createUser(email, password, name, PhotoURL)
             .then(result => {
-                
+
                 console.log(result.user);
                 setUser(result.user)
                 setSuccess("Account Created successfully");
                 alert("Account Created successfully")
-                updateUserProfile(name,PhotoURL)
+                updateUserProfile(name, PhotoURL)
                 // .then()
                 navigate("/");
             })
@@ -106,6 +107,9 @@ const Register = () => {
             <br />
             <div>
                 <h3 className="text-center text-xl font-medium text-amber-600">Already Have An Account? <Link to={"/login"}><span className="text-lime-300" >LOGIN</span></Link></h3>
+            </div>
+            <div>
+                
             </div>
         </div>
     );
