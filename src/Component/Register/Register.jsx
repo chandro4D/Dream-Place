@@ -12,7 +12,7 @@ const Register = () => {
     const navigate = useNavigate();
 
 
-    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser,user, setUser, updateUserProfile } = useContext(AuthContext);
 
 
     const handleRegister = e => {
@@ -67,6 +67,7 @@ const Register = () => {
                   });
                 
                 updateUserProfile(name, PhotoURL)
+                setUser({ ...user,photoURL: PhotoURL,displayName: name})
                 // .then()
                 navigate("/");
             })
@@ -77,11 +78,9 @@ const Register = () => {
     }
     return (
         <div className="lg:w-[500px] lg:h-[630px] sm:w-[400px] sm:h-[550px] bg-slate-400 lg:ml-[500px] sm:ml-0 mt-10 mb-10 rounded-xl">
-            {/* <Helmet>
-                <title>Dream Resorts//Register</title>
-            </Helmet> */}
+            
             <div className=" pt-10">
-                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900" className="text-center text-2xl font-bold text-white mb-2">WELCOME TO DREAM RESORTS</h2>
+                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="900" className="text-center text-2xl font-bold text-white mb-2">WELCOME TO DREAM PLACE</h2>
                 <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" className="text-center text-xl font-semibold text-black">Register to your account </p>
             </div>
             <form onSubmit={handleRegister} className="pt-8 lg:pl-12 sm:pl-0">

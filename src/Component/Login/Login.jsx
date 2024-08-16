@@ -80,11 +80,9 @@ const Login = () => {
     }
     return (
         <div className="lg:w-[500px] sm:w-[350px] lg:h-[600px] sm:h-[500px] bg-gray-400  lg:ml-[500px] mt-10 mb-10 rounded-xl sm:ml-[0px]">
-            {/* <Helmet>
-                <title>Dream Resorts//Login</title>
-            </Helmet> */}
+           
             <div className=" pt-14">
-                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" className="text-center text-2xl font-bold text-white mb-2">WELCOME TO DREAM RESORTS</h2>
+                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" className="text-center text-2xl font-bold text-white mb-2">WELCOME TO DREAM PLACE</h2>
                 <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1100" className="text-center text-xl font-semibold text-black">Login To Your Account By Entering<br /> Your Email and Password</p>
             </div>
             <form onSubmit={handleLogIn} className="pt-10 lg:pl-12 sm:pl-0">
